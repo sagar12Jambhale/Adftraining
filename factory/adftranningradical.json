@@ -1,0 +1,9 @@
+{
+	"name": "adftranningradical",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "63962e71-a2ec-4c8b-a586-a25d69d692cb",
+		"tenantId": "6fec44c2-f19b-4f9b-9126-aee2e18e060c"
+	}
+}
