@@ -2,7 +2,7 @@
 	"name": "DelimitedText1",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "delimited1",
+			"referenceName": "Linkpathfordatacopy",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,7 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "emp1.csv",
+				"fileName": "customers-100.csv",
+				"folderPath": "sagarsorce",
 				"container": "sagarsorcefordatacopy"
 			},
 			"columnDelimiter": ",",
@@ -20,15 +21,51 @@
 		},
 		"schema": [
 			{
-				"name": "emp_id",
+				"name": "Index",
 				"type": "String"
 			},
 			{
-				"name": "deptname",
+				"name": "Customer Id",
 				"type": "String"
 			},
 			{
-				"name": "deptlocation",
+				"name": "First Name",
+				"type": "String"
+			},
+			{
+				"name": "Last Name",
+				"type": "String"
+			},
+			{
+				"name": "Company",
+				"type": "String"
+			},
+			{
+				"name": "City",
+				"type": "String"
+			},
+			{
+				"name": "Country",
+				"type": "String"
+			},
+			{
+				"name": "Phone 1",
+				"type": "String"
+			},
+			{
+				"name": "Phone 2",
+				"type": "String"
+			},
+			{
+				"name": "Email",
+				"type": "String"
+			},
+			{
+				"name": "Subscription Date",
+				"type": "String"
+			},
+			{
+				"name": "Website",
 				"type": "String"
 			}
 		]

@@ -1,0 +1,9 @@
+{
+	"name": "SagarTraining",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b5c0dd59-e81d-441f-af30-e5a6926251dc",
+		"tenantId": "6fec44c2-f19b-4f9b-9126-aee2e18e060c"
+	}
+}

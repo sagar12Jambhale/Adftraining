@@ -1,0 +1,60 @@
+{
+	"name": "Json1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Linkpathfordatacopy",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "sagarDestination",
+				"container": "sagarsorcefordatacopy"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"Index": {
+					"type": "string"
+				},
+				"Customer Id": {
+					"type": "string"
+				},
+				"First Name": {
+					"type": "string"
+				},
+				"Last Name": {
+					"type": "string"
+				},
+				"Company": {
+					"type": "string"
+				},
+				"City": {
+					"type": "string"
+				},
+				"Country": {
+					"type": "string"
+				},
+				"Phone 1": {
+					"type": "string"
+				},
+				"Phone 2": {
+					"type": "string"
+				},
+				"Email": {
+					"type": "string"
+				},
+				"Subscription Date": {
+					"type": "string"
+				},
+				"Website": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
