@@ -1,0 +1,98 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "SagarTraining"
+		},
+		"CosmosDbNoSql1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'CosmosDbNoSql1'"
+		},
+		"CosmosDbforemployeee_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'CosmosDbforemployeee'"
+		},
+		"Linkpathfordatacopy_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Linkpathfordatacopy'"
+		},
+		"adftranninglinkservice_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'adftranninglinkservice'"
+		},
+		"cosmojoinlink_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'cosmojoinlink'"
+		},
+		"delimited1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'delimited1'"
+		},
+		"destinationsagar_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'destinationsagar'"
+		},
+		"final_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'final'"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "SagarTraining_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"CosmosDbNoSql1_connectionString": {
+						"value": "[parameters('CosmosDbNoSql1_connectionString')]"
+					},
+					"CosmosDbforemployeee_connectionString": {
+						"value": "[parameters('CosmosDbforemployeee_connectionString')]"
+					},
+					"Linkpathfordatacopy_connectionString": {
+						"value": "[parameters('Linkpathfordatacopy_connectionString')]"
+					},
+					"adftranninglinkservice_connectionString": {
+						"value": "[parameters('adftranninglinkservice_connectionString')]"
+					},
+					"cosmojoinlink_connectionString": {
+						"value": "[parameters('cosmojoinlink_connectionString')]"
+					},
+					"delimited1_connectionString": {
+						"value": "[parameters('delimited1_connectionString')]"
+					},
+					"destinationsagar_connectionString": {
+						"value": "[parameters('destinationsagar_connectionString')]"
+					},
+					"final_connectionString": {
+						"value": "[parameters('final_connectionString')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

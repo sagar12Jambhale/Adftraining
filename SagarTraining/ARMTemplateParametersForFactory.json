@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "SagarTraining"
+		},
+		"CosmosDbNoSql1_connectionString": {
+			"value": ""
+		},
+		"CosmosDbforemployeee_connectionString": {
+			"value": ""
+		},
+		"Linkpathfordatacopy_connectionString": {
+			"value": ""
+		},
+		"adftranninglinkservice_connectionString": {
+			"value": ""
+		},
+		"cosmojoinlink_connectionString": {
+			"value": ""
+		},
+		"delimited1_connectionString": {
+			"value": ""
+		},
+		"destinationsagar_connectionString": {
+			"value": ""
+		},
+		"final_connectionString": {
+			"value": ""
+		}
+	}
+}
