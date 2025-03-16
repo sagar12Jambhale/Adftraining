@@ -2,7 +2,7 @@
 	"name": "DelimitedText2",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "delimited1",
+			"referenceName": "Linkpathfordatacopy",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,7 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "employee.csv",
 				"container": "sagarsorcefordatacopy"
 			},
 			"columnDelimiter": ",",
@@ -24,11 +23,11 @@
 				"type": "String"
 			},
 			{
-				"name": "empname",
+				"name": "deptname",
 				"type": "String"
 			},
 			{
-				"name": "salary",
+				"name": "deptlocation",
 				"type": "String"
 			}
 		]

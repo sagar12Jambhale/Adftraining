@@ -2,14 +2,63 @@
 	"name": "CosmosDbNoSqlContainer1",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "CosmosDbNoSql1",
+			"referenceName": "CosmosDbforemployeee",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "CosmosDbSqlApiCollection",
-		"schema": {},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"Year": {
+					"type": "string"
+				},
+				"Industry_aggregation_NZSIOC": {
+					"type": "string"
+				},
+				"Industry_code_NZSIOC": {
+					"type": "string"
+				},
+				"Industry_name_NZSIOC": {
+					"type": "string"
+				},
+				"Units": {
+					"type": "string"
+				},
+				"Variable_code": {
+					"type": "string"
+				},
+				"Variable_name": {
+					"type": "string"
+				},
+				"Variable_category": {
+					"type": "string"
+				},
+				"Value": {
+					"type": "string"
+				},
+				"Industry_code_ANZSIC06": {
+					"type": "string"
+				},
+				"filepath": {
+					"type": "string"
+				},
+				"Filename": {
+					"type": "string"
+				},
+				"currenttimestamp": {
+					"type": "string"
+				},
+				"UniqueId": {
+					"type": "string"
+				},
+				"country": {
+					"type": "string"
+				}
+			}
+		},
 		"typeProperties": {
-			"collectionName": "empdetails"
+			"collectionName": "Employee"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
