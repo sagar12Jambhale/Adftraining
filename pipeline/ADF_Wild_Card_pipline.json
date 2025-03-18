@@ -21,7 +21,7 @@
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
 							"wildcardFolderPath": "sagarsorce",
-							"wildcardFileName": "emp*.txt",
+							"wildcardFileName": "emp*.csv",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -36,7 +36,7 @@
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
 							"quoteAllText": true,
-							"fileExtension": ".csv"
+							"fileExtension": "csv"
 						}
 					},
 					"enableStaging": false,
@@ -51,7 +51,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DelimitedText5",
+						"referenceName": "DelimitedText6",
 						"type": "DatasetReference"
 					}
 				],
