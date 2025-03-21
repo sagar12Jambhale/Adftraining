@@ -1,0 +1,15 @@
+{
+	"name": "CosmosDbNoSqlContainer5",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "CosmosDbNoSql2DEPT",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "CosmosDbSqlApiCollection",
+		"schema": {},
+		"typeProperties": {
+			"collectionName": "dept_sagar"
+		}
+	}
+}

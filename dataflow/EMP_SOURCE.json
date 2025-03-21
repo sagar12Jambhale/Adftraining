@@ -1,0 +1,86 @@
+{
+	"name": "EMP_SOURCE",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"linkedService": {
+						"referenceName": "ADF_COSMOSDB_EMP1",
+						"type": "LinkedServiceReference"
+					},
+					"name": "ADFDATAFLOWEMP",
+					"description": "ADF_DATA_FLOW"
+				},
+				{
+					"dataset": {
+						"referenceName": "cosmosdbdept",
+						"type": "DatasetReference"
+					},
+					"name": "DEPT"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DelimitedText10",
+						"type": "DatasetReference"
+					},
+					"name": "destination"
+				}
+			],
+			"transformations": [
+				{
+					"name": "adfjoin"
+				},
+				{
+					"name": "select1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          department as short,",
+				"          salary as integer,",
+				"          Empname as string,",
+				"          empId as short",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     container: 'emp_sagar',",
+				"     storeType: 'oltp',",
+				"     format: 'document',",
+				"     store: 'cosmosDB') ~> ADFDATAFLOWEMP",
+				"source(output(",
+				"          Depid as short,",
+				"          Depname as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     format: 'document') ~> DEPT",
+				"ADFDATAFLOWEMP, DEPT join(department == Depid,",
+				"     joinType:'inner',",
+				"     matchType:'exact',",
+				"     ignoreSpaces: false,",
+				"     broadcast: 'auto')~> adfjoin",
+				"adfjoin select(mapColumn(",
+				"          department,",
+				"          salary,",
+				"          Empname,",
+				"          empId,",
+				"          Depid,",
+				"          Depname",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1",
+				"adfjoin sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Depid as string,",
+				"          Depname as string",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> destination"
+			]
+		}
+	}
+}
