@@ -1,0 +1,41 @@
+{
+	"name": "DelimitedText9",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "emplink",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "empdata.csv",
+				"folderPath": "sagarsorce",
+				"container": "sagarsorcefordatacopy"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "empId",
+				"type": "String"
+			},
+			{
+				"name": "Empname",
+				"type": "String"
+			},
+			{
+				"name": "salary",
+				"type": "String"
+			},
+			{
+				"name": "department",
+				"type": "String"
+			}
+		]
+	}
+}

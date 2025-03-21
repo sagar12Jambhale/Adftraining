@@ -1,0 +1,15 @@
+{
+	"name": "CosmosDbNoSqlemp",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "CosmosDbNoemp",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "CosmosDbSqlApiCollection",
+		"schema": {},
+		"typeProperties": {
+			"collectionName": "emp_sagar"
+		}
+	}
+}

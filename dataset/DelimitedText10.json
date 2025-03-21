@@ -1,0 +1,32 @@
+{
+	"name": "DelimitedText10",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Linkpathfordatacopy",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "sagarsorce",
+				"container": "sagarsorcefordatacopy"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Depid",
+				"type": "String"
+			},
+			{
+				"name": "Depname",
+				"type": "String"
+			}
+		]
+	}
+}
