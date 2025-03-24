@@ -1,0 +1,9 @@
+{
+	"name": "sagarasdfdata",
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "99fa6de7-1578-400f-aeb5-66226cd6add5",
+		"tenantId": "6fec44c2-f19b-4f9b-9126-aee2e18e060c"
+	}
+}
