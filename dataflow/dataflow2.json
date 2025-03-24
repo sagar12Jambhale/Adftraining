@@ -1,0 +1,106 @@
+{
+	"name": "dataflow2",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"linkedService": {
+						"referenceName": "sagaradfgitemp",
+						"type": "LinkedServiceReference"
+					},
+					"name": "ADFdata1",
+					"description": "ADFdata123"
+				},
+				{
+					"linkedService": {
+						"referenceName": "cosmodbdept",
+						"type": "LinkedServiceReference"
+					},
+					"name": "ADFData123",
+					"description": "ADFData123"
+				}
+			],
+			"sinks": [
+				{
+					"linkedService": {
+						"referenceName": "AzureBlobStorage123",
+						"type": "LinkedServiceReference"
+					},
+					"name": "Emp"
+				},
+				{
+					"linkedService": {
+						"referenceName": "AzureBlobStoragdept",
+						"type": "LinkedServiceReference"
+					},
+					"name": "dept"
+				}
+			],
+			"transformations": [
+				{
+					"name": "adfjoin"
+				},
+				{
+					"name": "split1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          department as short,",
+				"          salary as integer,",
+				"          Empname as string,",
+				"          empId as short",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     container: 'emp_sagar',",
+				"     storeType: 'oltp',",
+				"     format: 'document',",
+				"     store: 'cosmosDB') ~> ADFdata1",
+				"source(output(",
+				"          Depid as short,",
+				"          Depname as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     container: 'dept_sagar',",
+				"     storeType: 'oltp',",
+				"     format: 'document',",
+				"     store: 'cosmosDB') ~> ADFData123",
+				"ADFdata1, ADFData123 join(department == Depid,",
+				"     joinType:'inner',",
+				"     matchType:'exact',",
+				"     ignoreSpaces: false,",
+				"     broadcast: 'auto')~> adfjoin",
+				"adfjoin split(Depid==1,",
+				"     Depid==2,",
+				"     disjoint: false) ~> split1@(dept1, dept2)",
+				"split1@dept1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     format: 'delimited',",
+				"     container: 'sagarsorcefordatacopy',",
+				"     folderPath: 'sagarDestination',",
+				"     columnDelimiter: ',',",
+				"     escapeChar: '\\\\',",
+				"     quoteChar: '\\\"',",
+				"     columnNamesAsHeader: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     saveOrder: 1) ~> Emp",
+				"split1@dept2 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     format: 'delimited',",
+				"     container: 'sagarsorcefordatacopy',",
+				"     folderPath: 'sagarDestination',",
+				"     columnDelimiter: ',',",
+				"     escapeChar: '\\\\',",
+				"     quoteChar: '\\\"',",
+				"     columnNamesAsHeader: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     saveOrder: 2) ~> dept"
+			]
+		}
+	}
+}
