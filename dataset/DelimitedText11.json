@@ -2,7 +2,7 @@
 	"name": "DelimitedText11",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureBlobStoragkeyvolt",
+			"referenceName": "AzureBlobStorage125",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
