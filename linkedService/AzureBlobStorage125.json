@@ -1,5 +1,5 @@
 {
-	"name": "AzureBlobStoragkeyvolt",
+	"name": "AzureBlobStorage125",
 	"properties": {
 		"annotations": [],
 		"type": "AzureBlobStorage",
@@ -8,7 +8,7 @@
 			"accountKey": {
 				"type": "AzureKeyVaultSecret",
 				"store": {
-					"referenceName": "AzureKeyVault1",
+					"referenceName": "AzureKeyVault1_main",
 					"type": "LinkedServiceReference"
 				},
 				"secretName": "Accesskey"
