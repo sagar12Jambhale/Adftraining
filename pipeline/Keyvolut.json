@@ -40,6 +40,44 @@
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "emp_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "emp_id",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "deptname",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "deptname",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "deptlocation",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "deptlocation",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
@@ -55,7 +93,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DelimitedText12",
+						"referenceName": "DelimitedText13",
 						"type": "DatasetReference"
 					}
 				]
