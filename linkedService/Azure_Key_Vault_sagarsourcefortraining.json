@@ -1,0 +1,10 @@
+{
+	"name": "Azure_Key_Vault_sagarsourcefortraining",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://keyvaultsagaruat.vault.azure.net/"
+		}
+	}
+}
