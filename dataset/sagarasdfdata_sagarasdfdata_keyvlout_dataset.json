@@ -1,0 +1,36 @@
+{
+	"name": "sagarasdfdata_sagarasdfdata_keyvlout_dataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "sagarasdfdata_sagarasdfdata_keyvlout_dataset",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "emp1.csv",
+				"container": "sagarsorcefordatacopy"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "emp_id",
+				"type": "String"
+			},
+			{
+				"name": "deptname",
+				"type": "String"
+			},
+			{
+				"name": "deptlocation",
+				"type": "String"
+			}
+		]
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"name": "sagarasdfdata_sagarasdfdata_keyvlout",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://keyvaultsagaruat.vault.azure.net/"
+		}
+	}
+}
